@@ -1,6 +1,6 @@
 +++
-title = "reveal-hugo"
-description = "A Hugo theme for creating Reveal.js presentations"
+title = "Introduction"
+description = "DTM Crash Course Introduction"
 outputs = ["Reveal"]
 [reveal_hugo]
 custom_theme = "robot-lung.css"
@@ -13,10 +13,11 @@ class = "hotpink"
 background = "#FF4081"
 +++
 
-# 📽️
+# Introduction
 
-# reveal-hugo
+Digital Transformation Management @ University of Bologna
 
-A Hugo theme for creating Reveal.js presentations.
+Crash Course Introduction
 
-~ made by [@dzello](https://dzello.com/) ~
+### [*Davide Domini* --- `davide.domini2@unibo.it`](mailto:davide.domini2@unibo.it)
+### [*Danilo Pianini* --- `danilo.pianini@unibo.it`](mailto:danilo.pianini@unibo.it)

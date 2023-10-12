@@ -1,0 +1,949 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<meta name="generator" content="Hugo 0.118.2">
+    <meta charset="utf-8">
+<title>reveal-hugo</title>
+<meta name="description" content="A Hugo theme for creating Reveal.js presentations">
+<meta name="author" content="Martina Baiardi">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><link rel="stylesheet" href="/slides-template-hugo-reveal/reveal-js/dist/reset.css">
+<link rel="stylesheet" href="/slides-template-hugo-reveal/reveal-js/dist/reveal.css">
+  <link rel="stylesheet" href="/slides-template-hugo-reveal/css/custom-theme.min.29cdb612035326daec50dba1ecd3f09fe49efe02bdc2a67400c7c852b9dac938.css" id="theme"><link rel="stylesheet" href="/slides-template-hugo-reveal/highlight-js/color-brewer.min.css">
+<link rel="stylesheet" href="https://gitcdn.link/repo/DanySK/css-blur-animation/master/blur.css">
+<link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Oxygen Mono' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Ubuntu Mono' rel='stylesheet'>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/81ac037be0.js" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    
+    <div class="reveal">
+      <div class="slides">
+  
+
+    <section><h1 id="heading">📽️</h1>
+<h1 id="reveal-hugo">reveal-hugo</h1>
+<p>A Hugo theme for creating Reveal.js presentations.</p>
+<p>~ made by <a href="https://dzello.com/">@dzello</a> ~</p>
+</section>
+
+  
+
+    
+<section data-noprocess data-shortcode-slide
+      id="included">
+  
+<h2 id="whats-included">What&rsquo;s included?</h2>
+<ul>
+<li>All Reveal.js HTML, CSS and JS (v4.4.0)</li>
+<li>All out-of-the-box Reveal.js themes</li>
+<li>Two custom Reveal.js themes (including this one)</li>
+</ul>
+<br>
+<br>
+<p><a href="https://github.com/dzello/reveal-hugo">see the code on github</a></p>
+</section>
+
+<section data-noprocess data-shortcode-slide
+      id="features">
+  
+<h2 id="features">Features</h2>
+<ul>
+<li>Write slides in Markdown in one or more files</li>
+<li>Shortcodes for fragments, sections, slides &amp; more</li>
+<li>All Reveal.js parameters can be customized</li>
+<li>Any Hugo section can be output as a presentation</li>
+<li>Supports math code blocks</li>
+<li>Supports mermaid code blocks</li>
+<li>Supports offline development or using a CDN</li>
+</ul>
+</section>
+    
+<section data-noprocess data-shortcode-slide
+      id="usage">
+  
+<h1 id="usage">Usage</h1>
+</section>
+
+<section data-noprocess data-shortcode-slide
+      id="prerequisite">
+  
+<h2 id="prerequisite">Prerequisite</h2>
+<p>First, add this to your <code>config.toml</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">outputFormats</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Reveal</span><span style="color:#000;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">baseName</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;index&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">mediaType</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;text/html&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">isHTML</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">true</span>
+</span></span></code></pre></div></section><section>
+<h3 id="presentation-at-site-root">Presentation at site root</h3>
+<p>Create <code>content/_index.md</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span>+++
+</span></span><span style="display:flex;"><span>outputs = [&#34;Reveal&#34;]
+</span></span><span style="display:flex;"><span>+++
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000080;font-weight:bold"># Slide 1
+</span></span></span><span style="display:flex;"><span><span style="color:#000080;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span>Hello world!
+</span></span></code></pre></div></section>
+
+<section data-noprocess data-shortcode-slide
+      id="adding-slides">
+  
+<h3 id="add-slides">Add slides</h3>
+<p>Separate them by <code>---</code> surrounded by blank lines:</p>
+<pre tabindex="0"><code># Slide 1
+
+Hello world!
+
+---
+
+# Slide 2
+
+Hello program!
+</code></pre></section>
+
+<section data-noprocess data-shortcode-slide
+      id="math-equations">
+  
+<h3 id="cool-equations">Cool equations</h3>
+<p>For equations, you can use a <a href="https://docs.gitlab.com/ee/user/markdown.html#math"><code>math</code></a> code block:</p>
+<pre tabindex="0"><code class="nohighlight" data-noescape>```math
+\tag*{(1)} \lim\limits_{x \to \infty} \exp(-x) = 0
+```
+</code></pre><small>
+renders to:
+</small>
+
+  
+  <p>$$
+\tag*{(1)} \lim\limits_{x \to \infty} \exp(-x) = 0
+$$</p>
+
+
+<p>Inline equations (e. g. $E=mc^2$) are wrapped in single $:</p>
+<pre tabindex="0"><code class="nohighlight" data-noescape>Albert Einstein&#39;s famous formula: $E=mc^2$
+</code></pre><p><small>💡 Note: When using inline math only (no math code block present), you have to set <code>math=true</code> in the frontmatter of your slide page.</small></p>
+<p><small>💡 Note: for code blocks support (<code>```math ...```</code>), hugo highlighting must be on (<code>codeFences = true</code> in <code>config.toml</code>). If you want to set <code>codeFences = false</code>, use the <code>math</code> <a href="#/math-shortcode">shortcode</a>.</small></p>
+</section>
+
+<section data-noprocess data-shortcode-slide
+      id="mermaid-diagrams">
+  
+<h3 id="mermaid">Mermaid</h3>
+<p>Slides can contain <a href="https://mermaid-js.github.io/mermaid/#/">mermaid</a> diagrams:</p>
+<pre tabindex="0"><code class="nohighlight" data-noescape>```mermaid
+graph LR
+    A --&gt; B
+    B --&gt; C
+```
+</code></pre><p>Or (see <a href="#/mermaid-shortcode">mermaid shortcode</a>)</p>
+<pre tabindex="0"><code class="nohighlight" data-noescape>{{&lt; mermaid &gt;}}
+graph LR
+    A --&gt; B
+    B --&gt; C
+{{&lt; /mermaid &gt;}}
+</code></pre><p>results in:</p>
+<div class="mermaid">
+graph LR
+    A --> B
+    B --> C
+
+</div>
+
+
+<p><small>💡 Note: for code blocks support (<code>```mermaid ...```</code>), hugo highlighting must be on (codeFences = true in config.toml)</small></p>
+</section><section>
+<h3 id="add-slides-with-other-files">Add slides with other files</h3>
+<p>Add slides to <code>content/home/*.md</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span>+++
+</span></span><span style="display:flex;"><span>weight = 10
+</span></span><span style="display:flex;"><span>+++
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000080;font-weight:bold"># Slide 3
+</span></span></span><span style="display:flex;"><span><span style="color:#000080;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000080;font-weight:bold"># Slide 4
+</span></span></span></code></pre></div><p><small>💡 Tip: Use <code>weight</code> to specify the order that files should be considered.</small></p>
+</section><section>
+<h3 id="presentation-at-section">Presentation at &lsquo;/{section}/&rsquo;</h3>
+<p>Add slides to <code>content/{section}/_index.md</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span>+++
+</span></span><span style="display:flex;"><span>outputs = [&#34;Reveal&#34;]
+</span></span><span style="display:flex;"><span>+++
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000080;font-weight:bold"># Slide 1
+</span></span></span><span style="display:flex;"><span><span style="color:#000080;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000080;font-weight:bold"># Slide 2
+</span></span></span></code></pre></div></section><section>
+<p>Add slides from other files in <code>content/{section}/*.md</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span>+++
+</span></span><span style="display:flex;"><span>weight = 10
+</span></span><span style="display:flex;"><span>+++
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000080;font-weight:bold"># Slide 3
+</span></span></span><span style="display:flex;"><span><span style="color:#000080;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000080;font-weight:bold"># Slide 4
+</span></span></span></code></pre></div><p><small>💡 Tip: Use <code>weight</code> to specify the order that files should be considered.</small></p>
+</section>
+    
+<section data-noprocess data-shortcode-slide
+      id="configuration">
+  
+<h1 id="configuration">Configuration</h1>
+<p>Place configuration values in <code>config.toml</code> or a presentation&rsquo;s front matter (<code>_index.md</code>).</p>
+</section><section>
+<h2 id="revealjs-themes">Reveal.js themes</h2>
+<p>Themes control the look and feel of your presentation. Set the <code>theme</code> param to any <a href="https://revealjs.com/themes/">valid Reveal.js theme</a>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">params</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">reveal_hugo</span><span style="color:#000;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">theme</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;moon&#34;</span>
+</span></span></code></pre></div></section><section>
+<h2 id="use-a-custom-theme">Use a custom theme</h2>
+<p>To use a custom Reveal.js theme, place the CSS file in the <code>static</code> directory and set the <code>custom_theme</code> param.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">params</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">reveal_hugo</span><span style="color:#000;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">custom_theme</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;reveal-hugo/themes/robot-lung.css&#34;</span>
+</span></span></code></pre></div></section><section>
+<h3 id="use-a-custom-theme-advanced">Use a custom theme (advanced)</h3>
+<p>To use Hugo pipes to build a custom Reveal.js theme, place the source file (SCSS / PostCSS) in the <code>assets</code> directory and set the <code>custom_theme_compile</code> param.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">params</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">reveal_hugo</span><span style="color:#000;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">custom_theme</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;reveal-hugo/themes/custom-theme.scss&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">custom_theme_compile</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">true</span>
+</span></span></code></pre></div><small>
+<p>💡 See the <a href="/custom-theme-example/">custom theme example presentation</a> for more details.</p>
+</small>
+</section><section>
+<h2 id="bundled-themes">Bundled themes</h2>
+<p>reveal-hugo comes with 2 extra Reveal.js themes:</p>
+<ul>
+<li><a href="https://github.com/dzello/revealjs-themes#robot-lung">robot-lung</a> (this one)</li>
+<li><a href="https://github.com/dzello/revealjs-themes#sunblind">sunblind</a></li>
+</ul>
+<br>
+<small>
+<p>They live in the <code>static/reveal-hugo/themes</code> folder and also <a href="https://github.com/dzello/revealjs-themes">on Github</a>.</p>
+</small>
+</section><section>
+<h2 id="revealjs-params">Reveal.js params</h2>
+<p>Set <strong>snakecase</strong> versions of Reveal.js params, which will be camelized and passed to <code>Reveal.initialize</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">params</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">reveal_hugo</span><span style="color:#000;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">history</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">slide_number</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">transition</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#39;zoom&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">transition_speed</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#39;fast&#39;</span>
+</span></span></code></pre></div><p><a href="https://github.com/hakimel/reveal.js/#configuration">Full list of params</a></p>
+</section><section>
+<h2 id="highlightjs-themes">highlight.js themes</h2>
+<p>To change the syntax highlighting theme, set the <code>highlight_theme</code>
+to a valid <a href="https://highlightjs.org/static/demo/">highlight.js theme name</a>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">params</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">reveal_hugo</span><span style="color:#000;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">highlight_theme</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;zenburn&#34;</span>
+</span></span></code></pre></div></section><section>
+<h2 id="extending-the-layout">Extending the layout</h2>
+<p>Use partials to add HTML to the page for one or all presentations at a time.</p>
+<small>
+💡 This is the recommended way to add script and style tags to customize your presentations.
+</small>
+</section><section>
+<p>Here is where to put partials for different presentations and places in the DOM.
+<br><br></p>
+<table>
+<thead>
+<tr>
+<th>Presentation</th>
+<th>Before &lt;/head&gt;</th>
+<th>Before &lt;/body&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All</td>
+<td>reveal-hugo/head.html</td>
+<td>reveal-hugo/body.html</td>
+</tr>
+<tr>
+<td>Root</td>
+<td>home/reveal-hugo/head.html</td>
+<td>home/reveal-hugo/body.html</td>
+</tr>
+<tr>
+<td>Section</td>
+<td>{section}/reveal-hugo/head.html</td>
+<td>{section}/reveal-hugo/body.html</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<small>
+<p>💡 You can also create an <code>end.html</code> to put content before the end of the <code>.reveal</code> div tag.</p>
+</small>
+</section><section>
+<h2 id="custom-css-example">Custom CSS Example</h2>
+<p>In <code>home/reveal-hugo/head.html</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">style</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">reveal</span> <span style="color:#204a87;font-weight:bold">section</span> <span style="color:#204a87;font-weight:bold">h1</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">color</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">blue</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;/</span><span style="color:#204a87;font-weight:bold">style</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span></code></pre></div></section><section>
+<h2 id="custom-js-example">Custom JS Example</h2>
+<p>In <code>home/reveal-hugo/body.html</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">script</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;text/javascript&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">Reveal</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">on</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;slidechanged&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">function</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">event</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">log</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;🎞️ Slide is now &#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">event</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">indexh</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">});</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;/</span><span style="color:#204a87;font-weight:bold">script</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span></code></pre></div></section><section>
+<h3 id="extending-the-layout-1">Extending the layout</h3>
+<h4 id="alternative">(alternative)</h4>
+<p>You can declare a custom CSS or javascript in your configuration.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">reveal_hugo</span><span style="color:#000;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">custom_css</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;css/custom.css&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">custom_js</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;js/custom.js&#34;</span>
+</span></span></code></pre></div><small>
+<p>These files can be located in <code>static/css</code>, <code>static/js</code> folder</p>
+<p>💡 See the <a href="/extending-layout-example/#">extending layout example</a> for more details.</p>
+</small>
+</section>
+    <section><h1 id="shortcodes">Shortcodes</h1>
+</section><section>
+<p>Hugo&rsquo;s shortcodes are similar to functions or templates that extend what you can do with Markdown.</p>
+<p><a href="https://gohugo.io/content-management/shortcodes/">Shortcode documentation</a></p>
+</section>
+    <section><h2 id="fragment">Fragment</h2>
+<p>The <code>fragment</code> shortcode makes content appear incrementally.</p>
+<pre tabindex="0"><code>{{% fragment %}} One {{% /fragment %}}
+{{% fragment %}} Two {{% /fragment %}}
+{{% fragment %}} Three {{% /fragment %}}
+</code></pre><p>
+
+<span class='fragment ' >One</span>
+
+
+
+
+<span class='fragment ' >Two</span>
+
+
+
+
+<span class='fragment ' >Three</span>
+
+</p>
+</section><section>
+<h2 id="frag">Frag</h2>
+<p>The <code>frag</code> shortcode is more terse than <code>fragment</code>. It accepts a <code>c</code> attribute.</p>
+<pre tabindex="0"><code>{{&lt; frag c=&#34;One&#34; &gt;}}
+{{&lt; frag c=&#34;Two&#34; &gt;}}
+{{&lt; frag c=&#34;Three&#34; &gt;}}
+</code></pre><p><span class='fragment '
+  >
+  One
+</span>
+<span class='fragment '
+  >
+  Two
+</span>
+<span class='fragment '
+  >
+  Three
+</span></p>
+</section><section>
+<p>Both <code>fragment</code> and <code>frag</code> accept two additional parameters:</p>
+<ul>
+<li><code>class</code>: sets the class of the wrapping <code>span</code> element</li>
+<li><code>index</code>: controls the order in which sections will appear</li>
+</ul>
+</section>
+    
+<section data-noprocess data-shortcode-slide
+      id="math-shortcode">
+  
+<h3 id="mathematical-equations">Mathematical equations</h3>
+<p>Use the <code>math</code> shortcode if you need to enable reveal-js highlighting module
+(<code>codeFences = false</code>).</p>
+<pre tabindex="0"><code class="nohighlight" data-noescape>{{&lt; math &gt;}}
+\tag*{(1)} \lim\limits_{x \to \infty} \exp(-x) = 0
+{{&lt; /math &gt;}}
+</code></pre><small>
+displays as:
+</small>
+
+  
+  <p>$$
+\tag*{(1)} \lim\limits_{x \to \infty} \exp(-x) = 0
+$$</p>
+
+
+<p>For inline equations, use a self closed <code>math</code> shortcode:</p>
+<pre tabindex="0"><code class="nohighlight" data-noescape>Albert Einstein&#39;s famous formula: {{&lt; math &#34;E=mc^2&#34; /&gt;}}
+</code></pre><small>
+is rendered to:
+</small>
+<p>Albert Einstein&rsquo;s famous formula: $E=mc^2$
+
+</p>
+</section>
+    
+<section data-noprocess data-shortcode-slide
+      id="mermaid-shortcode">
+  
+<h1 id="mermaid-diagrams">Mermaid diagrams</h1>
+<p>Use the <code>mermaid</code> shortcode if you need to enable reveal-js highlighting module
+(<code>codeFences = false</code>). Otherwise, when <code>codeFences = true</code>, <code>```mermaid ```</code> codeblocks
+are also supported. <a href="hugo-hl-example/#/5">More info</a>.</p>
+<pre tabindex="0"><code class="nohighlight" data-noescape>{{&lt; mermaid &gt;}}
+graph LR
+    A --&gt; B
+    B --&gt; C
+{{&lt; /mermaid &gt;}}
+</code></pre><p>results in:</p>
+<div class="mermaid">
+graph LR
+    A --> B
+    B --> C
+
+</div>
+
+
+</section>
+    <section>
+
+<section data-shortcode-section>
+<h2 id="section">Section</h2>
+<p>The <code>section</code> shortcode groups slides into a <strong>vertical display</strong>.</p>
+<br>
+<small>
+use the down arrow or swipe down to continue
+</small>
+<br>
+<a href="#" class="navigate-down">🔽</a>
+</section><section>
+<p>Put the shortcode around the slides you want to group together.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span>{{% section %}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold">## Section slide 1
+</span></span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold">## Section slide 2
+</span></span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span>{{% /section %}}
+</span></span></code></pre></div><p>Keep going down.</p>
+</section><section>
+<h2 id="thats-it">That&rsquo;s it!</h2>
+<p>Use the right arrow or swipe right to continue.</p>
+
+</section>
+</section>
+    <section><h2 id="slide">Slide</h2>
+<p>Use this shortcode when you need to customize slide attributes like id, class, background color and transition.</p>
+</section>
+
+<section data-noprocess data-shortcode-slide
+      class="hello">
+  
+<h2 id="slide-1">Slide</h2>
+<p>Add the shortcode above the slide&rsquo;s content, below the <code>---</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{<span style="color:#000;font-weight:bold">&lt;</span> <span style="color:#204a87;font-weight:bold">slide</span> <span style="color:#c4a000">class</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hello&#34;</span> <span style="color:#000;font-weight:bold">&gt;</span>}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold">## Hello, world!
+</span></span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div></section>
+
+<section data-noprocess data-shortcode-slide
+      data-transition="zoom"
+      data-transition-speed="fast">
+  
+<h2 id="custom-slide-1">Custom slide 1</h2>
+<p><small>Did you notice? This slide has a fast zoom transition.</small></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{<span style="color:#000;font-weight:bold">&lt;</span> <span style="color:#204a87;font-weight:bold">slide</span> <span style="color:#c4a000">transition</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;zoom&#34;</span> <span style="color:#c4a000">transition-speed</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;fast&#34;</span> <span style="color:#000;font-weight:bold">&gt;</span>}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold">## Custom slide 1
+</span></span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div></section>
+
+<section data-noprocess data-shortcode-slide
+      data-background-color="#FF4081">
+  
+<h2 id="custom-slide-2">Custom slide 2</h2>
+<p><small>This slide has a different background color.</small></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{<span style="color:#000;font-weight:bold">&lt;</span> <span style="color:#204a87;font-weight:bold">slide</span> <span style="color:#c4a000">background-color</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;#FF4081&#34;</span> <span style="color:#000;font-weight:bold">&gt;</span>}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold">## Custom slide 2
+</span></span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div></section>
+
+<section data-noprocess data-shortcode-slide
+      data-background-color="#000000"
+      data-background-image="/images/alex-litvin-790876-unsplash.jpg">
+  
+<h2 id="custom-slide-3">Custom slide 3</h2>
+<p><small>This slide has a background image.</small></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{<span style="color:#000;font-weight:bold">&lt;</span> <span style="color:#204a87;font-weight:bold">slide</span> <span style="color:#c4a000">background-image</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;/images/alex-litvin-790876-unsplash.jpg&#34;</span> <span style="color:#000;font-weight:bold">&gt;</span>}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div><p><small>(credit <a href="https://unsplash.com/@alexlitvin">Alex Litvin</a>)</small></p>
+</section>
+
+<section data-noprocess data-shortcode-slide
+      id="custom-slide">
+  
+<p>💡 Tip: Setting a slide&rsquo;s <code>id</code> attribute makes it easy to link to from other parts of the presentation.
+<br><br></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{<span style="color:#000;font-weight:bold">&lt;</span> <span style="color:#204a87;font-weight:bold">slide</span> <span style="color:#c4a000">id</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;custom-slide&#34;</span> <span style="color:#000;font-weight:bold">&gt;</span>}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold">## Custom slide
+</span></span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div></section><section>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span>[<span style="color:#204a87;font-weight:bold">Try the link</span>](<span style="color:#c4a000">#custom-slide</span>)
+</span></span></code></pre></div><br>
+<p><a href="#custom-slide">Try the link</a></p>
+</section><section>
+<p>Slide attribute possibilities from the <a href="https://github.com/hakimel/reveal.js">Reveal.js docs</a>:</p>
+<ul>
+<li><code>autoslide</code></li>
+<li><code>state</code></li>
+<li><code>background</code></li>
+<li><code>background-color</code></li>
+<li><code>background-image</code></li>
+<li><code>background-size</code></li>
+<li><code>background-position</code></li>
+<li><code>background-repeat</code></li>
+</ul>
+</section><section>
+<ul>
+<li><code>background-video</code></li>
+<li><code>background-video-loop</code></li>
+<li><code>background-video-muted</code></li>
+<li><code>background-interactive</code></li>
+<li><code>background-iframe</code></li>
+<li><code>background-transition</code></li>
+<li><code>transition</code> (can have different in and out transitions)</li>
+<li><code>transition-speed</code></li>
+<li><code>notes</code> (can also use the note shortcode)</li>
+<li><code>timing</code></li>
+</ul>
+</section><section>
+
+
+<section data-shortcode-section>
+<h2 id="slide-templates">Slide templates</h2>
+<p>Store sets of common slide attributes in front matter variables and apply them to slides with the template attribute.</p>
+<br>
+<small>
+navigate down to learn more
+</small>
+<br>
+<a href="#" class="navigate-down">🔽</a>
+</section><section>
+<p>Create templates in config.toml, _index.md or the current page&rsquo;s front matter. Put them under the <strong>templates</strong> key with a meaningful name:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">reveal_hugo</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">templates</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">hotpink</span><span style="color:#000;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">class</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;hotpink&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">background</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;#FF4081&#34;</span>
+</span></span></code></pre></div></section>
+<section data-noprocess data-shortcode-slide
+    data-background="#FF4081"
+    class="hotpink"
+    data-template="hotpink">
+<p>Apply the template using the <strong>template</strong> attribute of the slide shortcode:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span>{{<span style="color:#000;font-weight:bold">&lt;</span> <span style="color:#204a87;font-weight:bold">slide</span> <span style="color:#c4a000">template</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hotpink&#34;</span> <span style="color:#000;font-weight:bold">&gt;</span>}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000080;font-weight:bold"># I&#39;m a hot pink slide!
+</span></span></span></code></pre></div></section><section>
+<p>If a template exists in multiple configurations, it&rsquo;s properties will be merged. If a property is declared multiple times, the order of precedence is:</p>
+<ul>
+<li>page</li>
+<li>section (_index.md)</li>
+<li>site (config.toml)</li>
+</ul>
+
+</section>
+</section>
+
+
+<section data-shortcode-section>
+<section data-noprocess data-shortcode-slide>
+</section>
+<section data-noprocess data-shortcode-slide>
+
+</section>
+</section><section>
+
+
+<section data-shortcode-section>
+<h2 id="slide-specific-css">Slide-specific CSS</h2>
+<p>Add more variety to your presentation by applying slide-specific CSS.</p>
+<br>
+<small>
+navigate down to learn more
+</small>
+<br>
+<a href="#" class="navigate-down">🔽</a>
+</section><section>
+<p>First, use the <code>slide</code> shortcode to give the slide a class:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{<span style="color:#000;font-weight:bold">&lt;</span> <span style="color:#204a87;font-weight:bold">slide</span> <span style="color:#c4a000">class</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;side-by-side&#34;</span> <span style="color:#000;font-weight:bold">&gt;</span>}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000080;font-weight:bold"># 📈
+</span></span></span><span style="display:flex;"><span><span style="color:#000080;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span><span style="color:#000080;font-weight:bold"># 📊
+</span></span></span><span style="display:flex;"><span><span style="color:#000080;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div></section><section>
+<p>Next, use a layout extension partial like <code>reveal-hugo/head.html</code> to add CSS selectors:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">style</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">reveal</span> <span style="color:#204a87;font-weight:bold">section</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">side-by-side</span> <span style="color:#204a87;font-weight:bold">h1</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">position</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">absolute</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">reveal</span> <span style="color:#204a87;font-weight:bold">section</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">side-by-side</span> <span style="color:#204a87;font-weight:bold">h1</span><span style="color:#000;font-weight:bold">:</span><span style="color:#5c35cc;font-weight:bold">first-of-type</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">left</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">25</span><span style="color:#204a87;font-weight:bold">%</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">reveal</span> <span style="color:#204a87;font-weight:bold">section</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">side-by-side</span> <span style="color:#204a87;font-weight:bold">h1</span><span style="color:#000;font-weight:bold">:</span><span style="color:#5c35cc;font-weight:bold">nth-of-type</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">2</span><span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">right</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">25</span><span style="color:#204a87;font-weight:bold">%</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;/</span><span style="color:#204a87;font-weight:bold">style</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span></code></pre></div></section>
+<section data-noprocess data-shortcode-slide
+      class="side-by-side">
+<h1 id="heading">📈</h1>
+<h1 id="heading-1">📊</h1>
+
+</section>
+</section>
+    <section>
+
+## Markdown
+
+Reveal.js has its own [markdown processor](https://github.com/hakimel/reveal.js#markdown). To use that instead of Hugo, surround a slide with the markdown shortcode.
+
+```markdown
+{{< markdown >}}
+
+# Hello world!
+
+{{< /markdown >}}
+```
+
+<br>
+<small>
+💡 Make sure to use the `{{< >}}` shortcode syntax to avoid rendering by Hugo.
+</small>
+
+---
+
+<!-- .slide: data-background="#FF4081" -->
+
+Reveal.js markdown uses HTML comments to change slide properties, like background color.
+
+```markdown
+{{< markdown >}}
+<!-- .slide: data-background="#FF4081" -->
+# I'm a colorful slide
+{{< /markdown >}}
+```
+
+
+
+</section>
+    <section><h2 id="notes">Notes</h2>
+<p>Add speaker notes (with markdown) to your presentation with the <code>note</code> shortcode. Type &rsquo;s&rsquo; to see this slide&rsquo;s speaker notes.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{% note %}}
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">-</span> You found the <span style="color:#000;font-weight:bold">**speaker notes**</span>!
+</span></span><span style="display:flex;"><span>{{% /note %}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div>
+
+
+<aside class="notes"><ul>
+<li>You found the <strong>speaker notes</strong>!</li>
+</ul>
+</aside>
+</section>
+
+<section data-noprocess data-shortcode-slide
+      data-notes="You found the notes!">
+  
+<h2 id="notes-1">Notes</h2>
+<p>You can also add notes with the <code>slide</code> shortcode and <code>notes</code> attribute:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{% slide notes=&#34;You found the notes!&#34; %}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div></section>
+<section data-noprocess>
+  <h2>Write slides in HTML</h2>
+  <p>Use a <code>section</code> tag with a <code>data-noprocess</code> attribute to avoid any processing by reveal-hugo.</p>
+  <pre>
+&lt;section data-noprocess&gt;
+  &lt;h1&gt;Hello world!&lt;/h1&gt;
+&lt;/section&gt;</pre>
+  <small>💡 This is useful if you can't get Markdown to output exactly what you want.</small>
+</section>
+</section>
+    <section><h1 id="resources">Resources</h1>
+</section><section>
+<h2 id="code-and-docs">Code and docs</h2>
+<ul>
+<li><a href="https://github.com/dzello/reveal-hugo">reveal-hugo Github README</a></li>
+<li><a href="https://github.com/dzello/reveal-hugo/tree/master/exampleSite">Content for this presentation</a></li>
+</ul>
+</section><section>
+<h2 id="external-resources">External resources</h2>
+<ul>
+<li><a href="https://revealjs.com/">Reveal.js</a></li>
+<li><a href="https://gohugo.io/">Hugo docs</a></li>
+<li><a href="https://gohugo.io/templates/output-formats/">Hugo output format docs</a></li>
+</ul>
+</section><section>
+<h2 id="designed-to">Designed to&hellip;</h2>
+<ul>
+<li>Deploy to <a href="https://netlify.com/">Netlify</a></li>
+<li>Edit with <a href="https://forestry.io/">Forestry</a></li>
+</ul>
+</section><section>
+<h1 id="heading">🙏</h1>
+<p>Contribute by opening issues and pull requests.</p>
+</section><section>
+<h1 id="thanks">Thanks!</h1>
+</section><section>
+<h1 id="heading-1">↩️</h1>
+<h4 id="start-over"><a href="#">Start over</a></h4>
+</section>
+
+</div>
+      
+
+    </div>
+<script type="text/javascript" src=/slides-template-hugo-reveal/reveal-hugo/object-assign.js></script>
+
+
+<script src="/slides-template-hugo-reveal/reveal-js/dist/reveal.js"></script>
+
+
+  <script type="text/javascript" src="/slides-template-hugo-reveal/reveal-js/plugin/markdown/markdown.js"></script>
+  
+  <script type="text/javascript" src="/slides-template-hugo-reveal/reveal-js/plugin/highlight/highlight.js"></script>
+  
+  <script type="text/javascript" src="/slides-template-hugo-reveal/reveal-js/plugin/zoom/zoom.js"></script>
+  
+  <script type="text/javascript" src="/slides-template-hugo-reveal/reveal-js/plugin/notes/notes.js"></script>
+  
+<script type="text/javascript">
+  
+  
+  function camelize(map) {
+    if (map) {
+      Object.keys(map).forEach(function(k) {
+        newK = k.replace(/(\_\w)/g, function(m) { return m[1].toUpperCase() });
+        if (newK != k) {
+          map[newK] = map[k];
+          delete map[k];
+        }
+      });
+    }
+    return map;
+  }
+
+  var revealHugoDefaults = { center: true, controls: true, history: true, progress: true, transition: "slide" };
+  var revealHugoSiteParams = {"custom_theme":"custom-theme.scss","custom_theme_compile":true,"custom_theme_options":{"enablesourcemap":true,"targetpath":"css/custom-theme.css"},"height":"900","highlight_theme":"solarized-dark","history":true,"slide_number":true,"theme":"league","transition":"slide","transition_speed":"fast","width":"1440"};
+  var revealHugoPageParams = {"custom_theme":"robot-lung.css","highlight_theme":"color-brewer","margin":0.2,"templates":{"hotpink":{"background":"#FF4081","class":"hotpink"}},"transition":"slide","transition_speed":"fast"};
+
+  var revealHugoPlugins = {
+    
+    plugins: [RevealMarkdown,RevealHighlight,RevealZoom,RevealNotes]
+  };
+
+  
+  var options = Object.assign({},
+    camelize(revealHugoDefaults),
+    camelize(revealHugoSiteParams),
+    camelize(revealHugoPageParams),
+    camelize(revealHugoPlugins));
+
+  Reveal.initialize(options);
+</script>
+
+
+
+
+
+  
+  
+
+  
+    
+  
+  
+    
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+
+  
+  <script type="text/javascript" src="/slides-template-hugo-reveal/mermaid.min_6838052300336322795.js"></script>
+  <script type="text/javascript">
+    mermaid.initialize({startOnLoad: false});
+    let render = (event) => {
+      let mermaidElems = event.currentSlide.querySelectorAll('.mermaid');
+      if (!mermaidElems.length){
+          return
+      }
+      mermaidElems.forEach(mermaidElem => {
+          let processed = mermaidElem.getAttribute('data-processed');
+          if (!processed){
+              
+              mermaid.init(undefined, mermaidElem);
+          }
+      });
+    };
+    
+    render({currentSlide: Reveal.getCurrentSlide()});
+
+    Reveal.on('slidechanged', render);
+    Reveal.on('ready', render);
+  </script>
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+  
+
+<script type="text/javascript" id="MathJax-script" async src="/slides-template-hugo-reveal/tex-svg_10887261161190234492.js"></script>
+
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+</script>
+
+<script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+<script>
+  if (/.*?(\?|&)print-pdf/.test(window.location.toString())) {
+      var ytVideos = document.getElementsByTagName("iframe")
+      for (let i = 0; i < ytVideos.length; i++) {
+          var videoFrame = ytVideos[i]
+          var isYouTube = /^https?:\/\/(www.)youtube\.com\/.*/.test(videoFrame.src)
+          if (isYouTube) {
+              console.log(`Removing ${videoFrame.src}`)
+              var parent = videoFrame.parentElement
+              videoFrame.remove()
+              var p = document.createElement('p')
+              p.append(
+                  document.createTextNode(
+                      "There was an embedded video here, but it is disabled in the printed version of the slides."
+                  )
+              )
+              p.append(document.createElement('br'))
+              p.append(
+                  document.createTextNode(
+                      `Visit instead ${
+                          videoFrame.src
+                      } or ${
+                          videoFrame.src.replace(
+                              /(^https?:\/\/(www.)youtube\.com)\/(embed\/)(\w+).*/,
+                              "https://www.youtube.com/watch?v=$4"
+                          )
+                      }`
+                  )
+              )
+              parent.appendChild(p)
+          }
+      }
+  }
+</script>
+
+
+    
+  </body>
+</html>

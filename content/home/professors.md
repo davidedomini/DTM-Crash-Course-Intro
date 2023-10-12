@@ -3,7 +3,7 @@ weight = 10
 +++
 {{< slide id=professors >}}
 
-## Professors
+# Professors
 
 ### Davide Domini
 
@@ -12,7 +12,7 @@ weight = 10
 <br>
 <br>
 
-### Davide Domini
+### Danilo Pianini
 
 - email: [`danilo.pianini@unibo.it`](mailto:danilo.pianini@unibo.it)
 - homepage: [https://www.unibo.it/sitoweb/danilo.pianini](https://www.unibo.it/sitoweb/danilo.pianini)

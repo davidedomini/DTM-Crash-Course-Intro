@@ -54,253 +54,44 @@
 </section>
     
 <section data-noprocess data-shortcode-slide
-      id="usage">
+      id="timetable">
   
-<h1 id="usage">Usage</h1>
-</section>
-
-<section data-noprocess data-shortcode-slide
-      id="prerequisite">
-  
-<h2 id="prerequisite">Prerequisite</h2>
-<p>First, add this to your <code>config.toml</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">outputFormats</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Reveal</span><span style="color:#000;font-weight:bold">]</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">baseName</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;index&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">mediaType</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;text/html&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">isHTML</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">true</span>
-</span></span></code></pre></div></section><section>
-<h3 id="presentation-at-site-root">Presentation at site root</h3>
-<p>Create <code>content/_index.md</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span>+++
-</span></span><span style="display:flex;"><span>outputs = [&#34;Reveal&#34;]
-</span></span><span style="display:flex;"><span>+++
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000080;font-weight:bold"># Slide 1
-</span></span></span><span style="display:flex;"><span><span style="color:#000080;font-weight:bold"></span>
-</span></span><span style="display:flex;"><span>Hello world!
-</span></span></code></pre></div></section>
-
-<section data-noprocess data-shortcode-slide
-      id="adding-slides">
-  
-<h3 id="add-slides">Add slides</h3>
-<p>Separate them by <code>---</code> surrounded by blank lines:</p>
-<pre tabindex="0"><code># Slide 1
-
-Hello world!
-
----
-
-# Slide 2
-
-Hello program!
-</code></pre></section>
-
-<section data-noprocess data-shortcode-slide
-      id="math-equations">
-  
-<h3 id="cool-equations">Cool equations</h3>
-<p>For equations, you can use a <a href="https://docs.gitlab.com/ee/user/markdown.html#math"><code>math</code></a> code block:</p>
-<pre tabindex="0"><code class="nohighlight" data-noescape>```math
-\tag*{(1)} \lim\limits_{x \to \infty} \exp(-x) = 0
-```
-</code></pre><small>
-renders to:
-</small>
-
-  
-  <p>$$
-\tag*{(1)} \lim\limits_{x \to \infty} \exp(-x) = 0
-$$</p>
-
-
-<p>Inline equations (e. g. $E=mc^2$) are wrapped in single $:</p>
-<pre tabindex="0"><code class="nohighlight" data-noescape>Albert Einstein&#39;s famous formula: $E=mc^2$
-</code></pre><p><small>💡 Note: When using inline math only (no math code block present), you have to set <code>math=true</code> in the frontmatter of your slide page.</small></p>
-<p><small>💡 Note: for code blocks support (<code>```math ...```</code>), hugo highlighting must be on (<code>codeFences = true</code> in <code>config.toml</code>). If you want to set <code>codeFences = false</code>, use the <code>math</code> <a href="#/math-shortcode">shortcode</a>.</small></p>
-</section>
-
-<section data-noprocess data-shortcode-slide
-      id="mermaid-diagrams">
-  
-<h3 id="mermaid">Mermaid</h3>
-<p>Slides can contain <a href="https://mermaid-js.github.io/mermaid/#/">mermaid</a> diagrams:</p>
-<pre tabindex="0"><code class="nohighlight" data-noescape>```mermaid
-graph LR
-    A --&gt; B
-    B --&gt; C
-```
-</code></pre><p>Or (see <a href="#/mermaid-shortcode">mermaid shortcode</a>)</p>
-<pre tabindex="0"><code class="nohighlight" data-noescape>{{&lt; mermaid &gt;}}
-graph LR
-    A --&gt; B
-    B --&gt; C
-{{&lt; /mermaid &gt;}}
-</code></pre><p>results in:</p>
-<div class="mermaid">
-graph LR
-    A --> B
-    B --> C
-
-</div>
-
-
-<p><small>💡 Note: for code blocks support (<code>```mermaid ...```</code>), hugo highlighting must be on (codeFences = true in config.toml)</small></p>
-</section><section>
-<h3 id="add-slides-with-other-files">Add slides with other files</h3>
-<p>Add slides to <code>content/home/*.md</code></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span>+++
-</span></span><span style="display:flex;"><span>weight = 10
-</span></span><span style="display:flex;"><span>+++
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000080;font-weight:bold"># Slide 3
-</span></span></span><span style="display:flex;"><span><span style="color:#000080;font-weight:bold"></span>
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000080;font-weight:bold"># Slide 4
-</span></span></span></code></pre></div><p><small>💡 Tip: Use <code>weight</code> to specify the order that files should be considered.</small></p>
-</section><section>
-<h3 id="presentation-at-section">Presentation at &lsquo;/{section}/&rsquo;</h3>
-<p>Add slides to <code>content/{section}/_index.md</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span>+++
-</span></span><span style="display:flex;"><span>outputs = [&#34;Reveal&#34;]
-</span></span><span style="display:flex;"><span>+++
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000080;font-weight:bold"># Slide 1
-</span></span></span><span style="display:flex;"><span><span style="color:#000080;font-weight:bold"></span>
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000080;font-weight:bold"># Slide 2
-</span></span></span></code></pre></div></section><section>
-<p>Add slides from other files in <code>content/{section}/*.md</code></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span>+++
-</span></span><span style="display:flex;"><span>weight = 10
-</span></span><span style="display:flex;"><span>+++
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000080;font-weight:bold"># Slide 3
-</span></span></span><span style="display:flex;"><span><span style="color:#000080;font-weight:bold"></span>
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000080;font-weight:bold"># Slide 4
-</span></span></span></code></pre></div><p><small>💡 Tip: Use <code>weight</code> to specify the order that files should be considered.</small></p>
+<h1 id="timetable">Timetable</h1>
+<ul>
+<li>First lecture: Tuesday 17 October 9-12 (classroom 2.13)</li>
+<li>Second lecture: Thursday 19 October 9-12 (laboratory 3.3)</li>
+<li>Third lecture: Thursday 26 October 9-12 (laboratory 3.3)</li>
+</ul>
 </section>
     
 <section data-noprocess data-shortcode-slide
-      id="configuration">
+      id="goals">
   
-<h1 id="configuration">Configuration</h1>
-<p>Place configuration values in <code>config.toml</code> or a presentation&rsquo;s front matter (<code>_index.md</code>).</p>
-</section><section>
-<h2 id="revealjs-themes">Reveal.js themes</h2>
-<p>Themes control the look and feel of your presentation. Set the <code>theme</code> param to any <a href="https://revealjs.com/themes/">valid Reveal.js theme</a>.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">params</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">reveal_hugo</span><span style="color:#000;font-weight:bold">]</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">theme</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;moon&#34;</span>
-</span></span></code></pre></div></section><section>
-<h2 id="use-a-custom-theme">Use a custom theme</h2>
-<p>To use a custom Reveal.js theme, place the CSS file in the <code>static</code> directory and set the <code>custom_theme</code> param.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">params</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">reveal_hugo</span><span style="color:#000;font-weight:bold">]</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">custom_theme</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;reveal-hugo/themes/robot-lung.css&#34;</span>
-</span></span></code></pre></div></section><section>
-<h3 id="use-a-custom-theme-advanced">Use a custom theme (advanced)</h3>
-<p>To use Hugo pipes to build a custom Reveal.js theme, place the source file (SCSS / PostCSS) in the <code>assets</code> directory and set the <code>custom_theme_compile</code> param.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">params</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">reveal_hugo</span><span style="color:#000;font-weight:bold">]</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">custom_theme</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;reveal-hugo/themes/custom-theme.scss&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">custom_theme_compile</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">true</span>
-</span></span></code></pre></div><small>
-<p>💡 See the <a href="/custom-theme-example/">custom theme example presentation</a> for more details.</p>
-</small>
-</section><section>
-<h2 id="bundled-themes">Bundled themes</h2>
-<p>reveal-hugo comes with 2 extra Reveal.js themes:</p>
+<h1 id="goals">Goals</h1>
 <ul>
-<li><a href="https://github.com/dzello/revealjs-themes#robot-lung">robot-lung</a> (this one)</li>
-<li><a href="https://github.com/dzello/revealjs-themes#sunblind">sunblind</a></li>
+<li>
+<p>First lecture:</p>
+<ol>
+<li>Computer architectures</li>
+<li>Introduction to operating systems (OS)</li>
+</ol>
+</li>
+<li>
+<p>Second lecture:</p>
+<ol>
+<li>OS</li>
+<li>Command line interfaces</li>
+<li>Introduction to Integrated Development Environments (IDEs)</li>
+</ol>
+</li>
+<li>
+<p>Third lecture:</p>
+<ol>
+<li>IDEs</li>
+<li>Basic programming in Python</li>
+</ol>
+</li>
 </ul>
-<br>
-<small>
-<p>They live in the <code>static/reveal-hugo/themes</code> folder and also <a href="https://github.com/dzello/revealjs-themes">on Github</a>.</p>
-</small>
-</section><section>
-<h2 id="revealjs-params">Reveal.js params</h2>
-<p>Set <strong>snakecase</strong> versions of Reveal.js params, which will be camelized and passed to <code>Reveal.initialize</code>.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">params</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">reveal_hugo</span><span style="color:#000;font-weight:bold">]</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">history</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">true</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">slide_number</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">true</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">transition</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#39;zoom&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">transition_speed</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#39;fast&#39;</span>
-</span></span></code></pre></div><p><a href="https://github.com/hakimel/reveal.js/#configuration">Full list of params</a></p>
-</section><section>
-<h2 id="highlightjs-themes">highlight.js themes</h2>
-<p>To change the syntax highlighting theme, set the <code>highlight_theme</code>
-to a valid <a href="https://highlightjs.org/static/demo/">highlight.js theme name</a>.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">params</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">reveal_hugo</span><span style="color:#000;font-weight:bold">]</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">highlight_theme</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;zenburn&#34;</span>
-</span></span></code></pre></div></section><section>
-<h2 id="extending-the-layout">Extending the layout</h2>
-<p>Use partials to add HTML to the page for one or all presentations at a time.</p>
-<small>
-💡 This is the recommended way to add script and style tags to customize your presentations.
-</small>
-</section><section>
-<p>Here is where to put partials for different presentations and places in the DOM.
-<br><br></p>
-<table>
-<thead>
-<tr>
-<th>Presentation</th>
-<th>Before &lt;/head&gt;</th>
-<th>Before &lt;/body&gt;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>All</td>
-<td>reveal-hugo/head.html</td>
-<td>reveal-hugo/body.html</td>
-</tr>
-<tr>
-<td>Root</td>
-<td>home/reveal-hugo/head.html</td>
-<td>home/reveal-hugo/body.html</td>
-</tr>
-<tr>
-<td>Section</td>
-<td>{section}/reveal-hugo/head.html</td>
-<td>{section}/reveal-hugo/body.html</td>
-</tr>
-</tbody>
-</table>
-<p> </p>
-<small>
-<p>💡 You can also create an <code>end.html</code> to put content before the end of the <code>.reveal</code> div tag.</p>
-</small>
-</section><section>
-<h2 id="custom-css-example">Custom CSS Example</h2>
-<p>In <code>home/reveal-hugo/head.html</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">style</span><span style="color:#000;font-weight:bold">&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">reveal</span> <span style="color:#204a87;font-weight:bold">section</span> <span style="color:#204a87;font-weight:bold">h1</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">color</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">blue</span><span style="color:#000;font-weight:bold">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;/</span><span style="color:#204a87;font-weight:bold">style</span><span style="color:#000;font-weight:bold">&gt;</span>
-</span></span></code></pre></div></section><section>
-<h2 id="custom-js-example">Custom JS Example</h2>
-<p>In <code>home/reveal-hugo/body.html</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">script</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;text/javascript&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">Reveal</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">on</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;slidechanged&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">function</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">event</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">log</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;🎞️ Slide is now &#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">event</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">indexh</span><span style="color:#000;font-weight:bold">);</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">});</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;/</span><span style="color:#204a87;font-weight:bold">script</span><span style="color:#000;font-weight:bold">&gt;</span>
-</span></span></code></pre></div></section><section>
-<h3 id="extending-the-layout-1">Extending the layout</h3>
-<h4 id="alternative">(alternative)</h4>
-<p>You can declare a custom CSS or javascript in your configuration.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">reveal_hugo</span><span style="color:#000;font-weight:bold">]</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">custom_css</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;css/custom.css&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">custom_js</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;js/custom.js&#34;</span>
-</span></span></code></pre></div><small>
-<p>These files can be located in <code>static/css</code>, <code>static/js</code> folder</p>
-<p>💡 See the <a href="/extending-layout-example/#">extending layout example</a> for more details.</p>
-</small>
 </section>
     <section><h1 id="shortcodes">Shortcodes</h1>
 </section><section>
@@ -788,10 +579,6 @@ Reveal.js markdown uses HTML comments to change slide properties, like backgroun
   
 
   
-    
-  
-  
-    
   
 
   
